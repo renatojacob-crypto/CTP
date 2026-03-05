@@ -99,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td><span class="status-pills status-${item.status.toLowerCase().replace(' ', '-')}">${item.status}</span></td>
                 <td>
                     <button class="btn btn-action btn-view" onclick="viewDetails(${index})">Ver</button>
+                    <button class="btn btn-action btn-edit" onclick="editStatus(${index})">Editar</button>
                     <button class="btn btn-action btn-delete" onclick="deleteEntry(${index})">X</button>
                 </td>
             `;
@@ -134,6 +135,19 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
         modal.style.display = 'block';
+    };
+
+    window.editStatus = (index) => {
+        const item = atendimentos[index];
+        const newStatus = prompt(`Alterar status do atendimento #${item.id} (${item.instituicao}):\nOpções: Aberto, Em Atendimento, Encaminhado, Encerrado, Cancelado`, item.status);
+
+        if (newStatus && ['Aberto', 'Em Atendimento', 'Encaminhado', 'Encerrado', 'Cancelado'].includes(newStatus)) {
+            atendimentos[index].status = newStatus;
+            saveData();
+            renderTable();
+        } else if (newStatus !== null) {
+            alert('Status inválido. Por favor, escolha uma das opções sugeridas.');
+        }
     };
 
     window.deleteEntry = (index) => {

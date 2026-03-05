@@ -282,6 +282,20 @@ tbody tr:hover {
     font-size: 0.75rem;
     margin-right: 0.3rem;
     border-radius: 6px;
+    color: white;
+}
+
+.btn-view {
+    background: var(--primary);
+}
+
+.btn-edit {
+    background: var(--accent);
+    color: var(--bg-dark);
+}
+
+.btn-delete {
+    background: var(--danger);
 }
 
 .btn-export {
