@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canal de Atendimento - ZOOM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="glass-container">
+        <header>
+            <h1>Canal de Atendimento</h1>
+            <p>Gerenciamento e Registro de Interações</p>
+        </header>
+
+        <main>
+            <section class="form-section">
+                <form id="atendimento-form">
+                    <div class="form-grid">
+                        <!-- Basic Info -->
+                        <div class="form-group">
+                            <label for="data-atendimento">Data</label>
+                            <input type="date" id="data-atendimento" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hora-inicial">Hora Inicial</label>
+                            <input type="time" id="hora-inicial" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hora-final">Hora Final</label>
+                            <input type="time" id="hora-final" required>
+                        </div>
+
+                        <!-- Dropdowns -->
+                        <div class="form-group">
+                            <label for="canal-atendimento">Canal de Atendimento</label>
+                            <select id="canal-atendimento" required>
+                                <option value="" disabled selected>Selecione...</option>
+                                <option value="Teams">Teams</option>
+                                <option value="Calendly">Calendly</option>
+                                <option value="WhatsApp">WhatsApp</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="instituicao">Instituição</label>
+                            <input type="text" id="instituicao" placeholder="Nome da Escola/Instituição" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nome-contato">Nome</label>
+                            <input type="text" id="nome-contato" placeholder="Nome do Responsável" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cargo-contato">Cargo</label>
+                            <select id="cargo-contato" required>
+                                <option value="" disabled selected>Selecione...</option>
+                                <option value="Professor Escola">Professor Escola</option>
+                                <option value="Orientador ZOOM">Orientador ZOOM</option>
+                                <option value="Orientador Franquia">Orientador Franquia</option>
+                                <option value="Monitor ZOOM">Monitor ZOOM</option>
+                                <option value="Monitor Escola">Monitor Escola</option>
+                                <option value="Coordenação">Coordenação</option>
+                                <option value="Gerência">Gerência</option>
+                            </select>
+                        </div>
+
+                        <!-- Checkboxes: Tipo de Atendimento -->
+                        <div class="form-group full-width">
+                            <label>Tipo de Atendimento</label>
+                            <div class="checkbox-group" id="tipo-atendimento-group">
+                                <label><input type="checkbox" name="tipo" value="Formação"> Formação</label>
+                                <label><input type="checkbox" name="tipo" value="Problema"> Problema</label>
+                                <label><input type="checkbox" name="tipo" value="Reclamação"> Reclamação</label>
+                                <label><input type="checkbox" name="tipo" value="Dúvida"> Dúvida</label>
+                                <label><input type="checkbox" name="tipo" value="Planejamento"> Planejamento</label>
+                                <div class="other-input">
+                                    <input type="checkbox" name="tipo" value="Outros" id="tipo-outros-check">
+                                    <input type="text" id="tipo-outros-text" placeholder="Outros (especifique)"
+                                        disabled>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Checkboxes: Segmento -->
+                        <div class="form-group full-width">
+                            <label>Segmento</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="segmento" value="Ed. Infantil"> Ed. Infantil</label>
+                                <label><input type="checkbox" name="segmento" value="Fundamental Anos Iniciais">
+                                    Fundamental Anos Iniciais</label>
+                                <label><input type="checkbox" name="segmento" value="Fundamental Anos Finais">
+                                    Fundamental Anos Finais</label>
+                                <label><input type="checkbox" name="segmento" value="Ens. Médio"> Ens. Médio</label>
+                            </div>
+                        </div>
+
+                        <!-- Dropdown: Programa -->
+                        <div class="form-group">
+                            <label for="programa">Programa</label>
+                            <select id="programa" required>
+                                <option value="" disabled selected>Selecione...</option>
+                                <option value="Jornada Z">Jornada Z</option>
+                                <option value="Eng. Pensamento Computacional">Eng. Pensamento Computacional</option>
+                                <option value="ZEM">ZEM</option>
+                                <option value="Itinerários">Itinerários</option>
+                                <option value="ZMaker">ZMaker</option>
+                            </select>
+                        </div>
+
+                        <!-- Checkboxes: Tecnologia -->
+                        <div class="form-group full-width">
+                            <label>Tecnologia Envolvida</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="tecnologia" value="Blocos de Montar"> Blocos de
+                                    Montar</label>
+                                <label><input type="checkbox" name="tecnologia" value="TaleBot"> TaleBot</label>
+                                <label><input type="checkbox" name="tecnologia" value="Matatalab Lite"> Matatalab
+                                    Lite</label>
+                                <label><input type="checkbox" name="tecnologia" value="Vincibot"> Vincibot</label>
+                                <label><input type="checkbox" name="tecnologia" value="EV3"> EV3</label>
+                                <label><input type="checkbox" name="tecnologia" value="Spike"> Spike</label>
+                                <label><input type="checkbox" name="tecnologia" value="NOUS AI"> NOUS AI</label>
+                                <label><input type="checkbox" name="tecnologia" value="Microbit"> Microbit</label>
+                                <label><input type="checkbox" name="tecnologia" value="Kite de Eletrônica ZOOM"> Kite de
+                                    Eletrônica ZOOM</label>
+                                <label><input type="checkbox" name="tecnologia" value="Kit de Eletrônica do Aluno"> Kit
+                                    de Eletrônica do Aluno</label>
+                                <label><input type="checkbox" name="tecnologia" value="AppDEV"> AppDEV</label>
+                                <label><input type="checkbox" name="tecnologia" value="GameDEV 1"> GameDEV 1</label>
+                                <label><input type="checkbox" name="tecnologia" value="GameDEV 2"> GameDEV 2</label>
+                                <label><input type="checkbox" name="tecnologia" value="Arduíno"> Arduíno</label>
+                                <label><input type="checkbox" name="tecnologia" value="Aula Desplugada"> Aula
+                                    Desplugada</label>
+                            </div>
+                        </div>
+
+                        <!-- Checkboxes: Atividade -->
+                        <div class="form-group full-width">
+                            <label>Atividade Envolvida</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="atividade" value="Formação Monitores"> Formação
+                                    Monitores</label>
+                                <label><input type="checkbox" name="atividade" value="Formação Orientadores"> Formação
+                                    Orientadores</label>
+                                <label><input type="checkbox" name="atividade" value="Formação Professores"> Formação
+                                    Professores</label>
+                                <label><input type="checkbox" name="atividade" value="Planejamento de Aula">
+                                    Planejamento de Aula</label>
+                                <label><input type="checkbox" name="atividade" value="Plantão Tira-Dúvidas"> Plantão
+                                    Tira-Dúvidas</label>
+                                <label><input type="checkbox" name="atividade" value="Dúvidas em Torneios"> Dúvidas em
+                                    Torneios</label>
+                                <label><input type="checkbox" name="atividade" value="Dúvidas em Projetos"> Dúvidas em
+                                    Projetos</label>
+                                <label><input type="checkbox" name="atividade" value="Não Aplicável"> Não
+                                    Aplicável</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="aula-envolvida">Envolve Alguma Aula?</label>
+                            <input type="text" id="aula-envolvida" placeholder="Ex: Aula 05 - Protótipos">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="status-atendimento">Status</label>
+                            <select id="status-atendimento" required>
+                                <option value="Aberto">Aberto</option>
+                                <option value="Em Atendimento">Em Atendimento</option>
+                                <option value="Encaminhado">Encaminhado</option>
+                                <option value="Encerrado">Encerrado</option>
+                                <option value="Cancelado">Cancelado</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="descricao-atendimento">Descrição do Atendimento</label>
+                            <textarea id="descricao-atendimento" rows="4" placeholder="Detalhes do que foi tratado..."
+                                required></textarea>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="devolutiva-atendimento">Devolutiva do Atendimento</label>
+                            <textarea id="devolutiva-atendimento" rows="4"
+                                placeholder="Retorno ou solução dada..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="save-btn">Salvar Atendimento</button>
+                        <button type="reset" class="btn btn-secondary">Limpar Formulário</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="table-section">
+                <div class="table-header">
+                    <h2>Registros Recentes</h2>
+                    <div class="table-actions">
+                        <button class="btn btn-export" id="export-btn">Exportar (CSV)</button>
+                        <button class="btn btn-primary" id="save-json-btn">Salvar (JSON)</button>
+                        <button class="btn btn-secondary" id="load-json-btn">Carregar (JSON)</button>
+                        <input type="file" id="file-input" style="display: none;" accept=".json">
+                        <a href="dashboard.html" target="_blank" class="btn btn-dashboard"
+                            id="open-dashboard-btn">Dashboard View</a>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table id="atendimento-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Data</th>
+                                <th>Início</th>
+                                <th>Fim</th>
+                                <th>Tempo</th>
+                                <th>Canal</th>
+                                <th>Instituição</th>
+                                <th>Nome</th>
+                                <th>Cargo</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="atendimento-body">
+                            <!-- Data will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for Details -->
+    <div id="details-modal" class="modal">
+        <div class="modal-content glass">
+            <span class="close-btn">&times;</span>
+            <div id="modal-body-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

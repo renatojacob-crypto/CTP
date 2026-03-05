@@ -1,0 +1,12 @@
+{
+  "name": "app-ctp-2026",
+  "version": "1.0.0",
+  "description": "Sistema de Atendimento ZOOM",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8080"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
